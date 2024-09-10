@@ -11,7 +11,7 @@ console:
 
 Loader:
 1. To start the loader - Api.loader(true)
-2. To stop the loader - Api.loader(false)
+2. To stop the loader - Api.loader(false)  
 
 DataManager:
 It is used for managing data for every steps and will be accessed via Getter Setter from LocalStorage.
