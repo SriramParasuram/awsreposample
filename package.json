@@ -1,38 +1,39 @@
 {
-  "name": "my-app",
+  "name": "basicapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "file:./",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "@material-ui/core": "^3.9.4",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^1.3.5",
+    "jsonschema": "^1.4.1",
+    "material-ui": "^0.20.2",
+    "moment": "^2.29.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-mdc-web": "^0.17.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.0.17"
   },
   "scripts": {
+    "generate": "./generate",
+    "install:apk": "cd android && ./gradlew installDevDebug",
+    "copy": "rm -rvf android/app/src/main/assets/www && mkdir -pv android/app/src/main/assets/www && cp -vr build/* android/app/src/main/assets/www/.",
+    "build:dev": "cp .env.dev .env && yarn run build && yarn run copy && cd android && ./gradlew assembleDevDebug",
+    "build:qa": "cp .env.qa .env && yarn run build && yarn run copy && cd android && ./gradlew assembleQaDebug",
+    "build:qa:release": "cp .env.qa .env && yarn run build && yarn run copy && cd android && ./gradlew assembleQaRelease",
+    "build:uat": "cp .env.uat .env && yarn run build && yarn run copy && cd android && ./gradlew assembleUatDebug",
+    "build:prod:debug": "cp .env.prod .env && yarn run build && yarn run copy && cd android && ./gradlew assembleProdDebug",
+    "build:prod:release": "cp .env.prod .env && yarn run build && yarn run copy && cd android && ./gradlew assembleProdRelease",
+    "start:qa": "cp .env.qa .env && react-scripts start",
+    "start:dev": "cp .env.dev .env && react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "theme": {
+    "primary-color": "#ff4d4f"
   }
 }
