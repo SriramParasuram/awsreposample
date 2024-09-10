@@ -10,7 +10,7 @@ export default class MainPage extends Component {
     render() {
         return (
             <div>
-   <div style={{ fontSize: '20px', fontWeight: 'bold', marginTop: '20px', display: 'flex', justifyContent: 'center'}}> AWS Trial </div>
+   <div style={{ fontSize: '20px', fontWeight: 'bold', marginTop: '20px', display: 'flex', justifyContent: 'center'}}> Orderpad </div>
                     <div className='inputverify' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',marginTop: '20px', alignItems: 'center' }}>
                         <div className='VerifyBtn' style={{ padding: '20px'}}>
                         <Button raised
